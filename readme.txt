@@ -8,7 +8,7 @@ Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Adds a toggle to remove links from the post terms block while maintaining all styling options.
+Adds a toggle to remove links from the post terms block.
 
 == Description ==
 
