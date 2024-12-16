@@ -1,0 +1,14 @@
+{
+  "name": "unlink-post-terms",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.7.0"
+  }
+}
