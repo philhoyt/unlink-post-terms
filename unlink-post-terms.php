@@ -69,7 +69,7 @@ function enqueue_editor_assets() {
 
 /**
  * Modifies the post terms block output when unlinking is enabled.
- * Preserves all original styling and classes while replacing links with spans.
+ * Replacing links with spans.
  *
  * @since 0.1.0
  *
@@ -88,7 +88,7 @@ function modify_post_terms_output( $block_content, $block ) {
 		return '';
 	}
 
-	// Replace links with spans while preserving the original block structure.
+	// Replace links with spans.
 	return preg_replace(
 		'/<a href=[^>]+>([^<]+)<\/a>/',
 		'<span class="wp-block-post-terms__term">$1</span>',
