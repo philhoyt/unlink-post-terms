@@ -58,11 +58,12 @@ add_action( 'init', __NAMESPACE__ . '\init' );
  * @since 0.1.0
  */
 function enqueue_editor_assets() {
+	$asset_file = require PLUGIN_DIR . 'build/index.asset.php';
 	wp_enqueue_script(
 		'unlink-post-terms',
 		PLUGIN_URL . 'build/index.js',
-		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
-		VERSION,
+		$asset_file['dependencies'],
+		$asset_file['version'],
 		true
 	);
 }
