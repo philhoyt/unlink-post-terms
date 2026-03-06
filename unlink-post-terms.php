@@ -3,7 +3,7 @@
  * Plugin Name:       Unlink Post Terms
  * Plugin URI:        https://github.com/philhoyt/unlink-post-terms
  * Description:       Adds a toggle to remove links from the post terms block while maintaining all styling options.
- * Version:           0.1.0
+ * Version:           1.0.0
  * Requires at least: 6.6
  * Requires PHP:      7.2
  * Author:            Phil Hoyt
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin version.
-define( __NAMESPACE__ . '\VERSION', '0.1.0' );
+define( __NAMESPACE__ . '\VERSION', '1.0.0' );
 
 // Plugin directory path.
 define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
@@ -46,7 +46,7 @@ function init() {
 
 	// Enqueue editor assets.
 	add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_editor_assets' );
-	
+
 	// Add filter for post terms block.
 	add_filter( 'render_block_core/post-terms', __NAMESPACE__ . '\modify_post_terms_output', 10, 2 );
 }
@@ -58,7 +58,11 @@ add_action( 'init', __NAMESPACE__ . '\init' );
  * @since 0.1.0
  */
 function enqueue_editor_assets() {
-	$asset_file = require PLUGIN_DIR . 'build/index.asset.php';
+	$asset_path = PLUGIN_DIR . 'build/index.asset.php';
+	if ( ! file_exists( $asset_path ) ) {
+		return;
+	}
+	$asset_file = require $asset_path;
 	wp_enqueue_script(
 		'unlink-post-terms',
 		PLUGIN_URL . 'build/index.js',
@@ -91,7 +95,7 @@ function modify_post_terms_output( $block_content, $block ) {
 
 	// Replace links with spans.
 	return preg_replace(
-		'/<a href=[^>]+>([^<]+)<\/a>/',
+		'/<a[^>]+>([^<]+)<\/a>/',
 		'<span class="wp-block-post-terms__term">$1</span>',
 		$block_content
 	);

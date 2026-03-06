@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "scripts": {
     "start": "wp-scripts start",
-    "build": "wp-scripts build"
+    "build": "wp-scripts build",
+    "lint:js": "wp-scripts lint-js",
+    "lint:js:fix": "wp-scripts lint-js --fix",
+    "format": "wp-scripts format",
+    "plugin-zip": "wp-scripts plugin-zip"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Phil Hoyt",
+  "license": "GPL-2.0-or-later",
+  "description": "Adds a toggle to remove links from the post terms block while maintaining all styling options.",
   "devDependencies": {
     "@wordpress/scripts": "^30.7.0"
   }

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ruleset name="Unlink Post Terms">
+	<description>WordPress coding standards for Unlink Post Terms plugin.</description>
+
+	<!-- Files to check. -->
+	<file>.</file>
+
+	<!-- Exclude generated and vendor paths. -->
+	<exclude-pattern>/build/*</exclude-pattern>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>/vendor/*</exclude-pattern>
+
+	<!-- Only check PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Show progress and sniff codes in results. -->
+	<arg value="ps"/>
+	<arg name="colors"/>
+
+	<!-- Check for cross-version PHP compatibility. -->
+	<config name="testVersion" value="7.2-"/>
+
+	<!-- Set minimum supported WordPress version. -->
+	<config name="minimum_supported_wp_version" value="6.6"/>
+
+	<!-- Use WordPress coding standards. -->
+	<rule ref="WordPress"/>
+
+	<!-- Enforce text domain. -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="unlink-post-terms"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Enforce a prefix for all globals to avoid conflicts. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="Unlink\UnlinkPostTerms"/>
+				<element value="unlink_post_terms"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

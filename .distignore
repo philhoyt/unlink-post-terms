@@ -1,0 +1,14 @@
+.distignore
+.eslintrc.js
+.git
+.gitignore
+.DS_Store
+CLAUDE.md
+composer.json
+composer.lock
+node_modules
+package.json
+package-lock.json
+phpcs.xml
+src
+vendor
