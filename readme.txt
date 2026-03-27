@@ -16,9 +16,11 @@ This plugin enhances the core Post Terms block by adding an option to display te
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/unlink-post-terms` directory
-2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Use the Post Terms block in any post or page, and you'll see a new "Unlink Terms" toggle in the block settings
+1. Download the latest `unlink-post-terms.zip` from the [GitHub Releases page](https://github.com/philhoyt/unlink-post-terms/releases/latest)
+2. In your WordPress admin, go to Plugins → Add New Plugin → Upload Plugin
+3. Choose the downloaded ZIP file and click 'Install Now'
+4. Activate the plugin through the 'Plugins' screen in WordPress
+5. Use the Post Terms block in any post or page, and you'll see a new "Unlink Terms" toggle in the block settings
 
 == Changelog ==
 

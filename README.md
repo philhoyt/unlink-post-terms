@@ -9,9 +9,11 @@ A WordPress plugin that adds an "Unlink Terms" toggle to the core Post Terms blo
 
 ## Installation
 
-1. Upload the plugin files to `/wp-content/plugins/unlink-post-terms`
-2. Activate the plugin through the Plugins screen in WordPress
-3. Add a Post Terms block to any post or page — an "Unlink Terms" toggle will appear in the block settings panel
+1. Download the latest `unlink-post-terms.zip` from the [GitHub Releases page](https://github.com/philhoyt/unlink-post-terms/releases/latest)
+2. In your WordPress admin, go to **Plugins → Add New Plugin → Upload Plugin**
+3. Choose the downloaded ZIP file and click **Install Now**
+4. Activate the plugin through the Plugins screen in WordPress
+5. Add a Post Terms block to any post or page — an "Unlink Terms" toggle will appear in the block settings panel
 
 ## License
 
