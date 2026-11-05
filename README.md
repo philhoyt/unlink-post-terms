@@ -1,4 +1,5 @@
 # Unlink Post Terms
+[![CI](https://github.com/philhoyt/unlink-post-terms/actions/workflows/ci.yml/badge.svg)](https://github.com/philhoyt/unlink-post-terms/actions/workflows/ci.yml)
 
 A WordPress plugin that adds an "Unlink Terms" toggle to the core Post Terms block. When enabled, term links are replaced with plain text, preserving all existing block styling options.
 
