@@ -3,7 +3,7 @@
  * Plugin Name:       Unlink Post Terms
  * Plugin URI:        https://github.com/philhoyt/unlink-post-terms
  * Description:       Adds a toggle to remove links from the post terms block while maintaining all styling options.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 6.6
  * Requires PHP:      7.2
  * Author:            Phil Hoyt
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin version.
-define( __NAMESPACE__ . '\VERSION', '1.1.0' );
+define( __NAMESPACE__ . '\VERSION', '1.1.1' );
 
 // Plugin directory path.
 define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
