@@ -1,20 +1,26 @@
 {
-	"name": "philhoyt/unlink-post-terms",
-	"description": "Adds a toggle to remove links from the post terms block.",
-	"license": "GPL-2.0-or-later",
-	"require-dev": {
-		"squizlabs/php_codesniffer": "^3.10",
-		"wp-coding-standards/wpcs": "^3.1",
-		"phpcsstandards/phpcsutils": "^1.0",
-		"dealerdirect/phpcodesniffer-composer-installer": "^1.0"
-	},
-	"scripts": {
-		"lint": "phpcs",
-		"lint:fix": "phpcbf"
-	},
-	"config": {
-		"allow-plugins": {
-			"dealerdirect/phpcodesniffer-composer-installer": true
-		}
-	}
+    "name": "philhoyt/unlink-post-terms",
+    "description": "Adds a toggle to remove links from the post terms block.",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "yahnis-elsts/plugin-update-checker": "^5.3"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.10",
+        "wp-coding-standards/wpcs": "^3.1",
+        "phpcsstandards/phpcsutils": "^1.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint": "phpcs",
+        "lint:fix": "phpcbf",
+        "copy-puc": "rsync -a --delete vendor/yahnis-elsts/plugin-update-checker/ lib/plugin-update-checker/",
+        "post-install-cmd": "@copy-puc",
+        "post-update-cmd": "@copy-puc"
+    }
 }

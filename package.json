@@ -1,6 +1,12 @@
 {
   "name": "unlink-post-terms",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "files": [
+    "build",
+    "lib",
+    "unlink-post-terms.php",
+    "readme.txt"
+  ],
   "scripts": {
     "start": "wp-scripts start",
     "build": "wp-scripts build",

@@ -4,7 +4,7 @@ Tags: blocks, post-terms, gutenberg
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,11 @@ This plugin enhances the core Post Terms block by adding an option to display te
 5. Use the Post Terms block in any post or page, and you'll see a new "Unlink Terms" toggle in the block settings
 
 == Changelog ==
+
+= 1.1.0 =
+* Add: Automatic updates delivered from GitHub releases.
+* Change: Tested up to WordPress 7.1.
+* Change: Update the build tooling to @wordpress/scripts 37.
 
 = 1.0.0 =
 * Added WordPress coding standards (PHPCS + WPCS, ESLint)

@@ -60,8 +60,9 @@ unlink-post-terms/
 ├── src/
 │   └── index.js            # Block editor extension (JSX/ES6)
 ├── vendor/                 # Composer dependencies (gitignored)
-├── .eslintrc.js            # ESLint config (extends @wordpress/eslint-plugin)
-├── composer.json           # PHP dev dependencies (PHPCS + WPCS)
+├── lib/                    # Plugin Update Checker (copied from vendor by composer)
+├── eslint.config.js        # ESLint flat config (@wordpress/eslint-plugin)
+├── composer.json           # Plugin Update Checker + PHP dev dependencies (PHPCS + WPCS)
 ├── phpcs.xml               # PHP_CodeSniffer config
 ├── unlink-post-terms.php   # Plugin entry point
 ├── readme.txt              # WordPress.org readme
@@ -73,4 +74,4 @@ unlink-post-terms/
 
 - Requires at least: 6.6
 - Requires PHP: 7.2
-- Tested up to: 6.7.1
+- Tested up to: 7.1

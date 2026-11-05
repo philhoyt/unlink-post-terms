@@ -15,6 +15,6 @@ paths:
 - Text domain: `unlink-post-terms`
 - PHP minimum: 7.2
 - WP minimum: 6.6
-- Distribution: GitHub (no release workflow)
+- Distribution: GitHub (release workflow + Plugin Update Checker)
 - Main file: `unlink-post-terms.php`
 - Version constant: `Unlink\UnlinkPostTerms\VERSION` (namespace constant)

@@ -3,7 +3,7 @@
  * Plugin Name:       Unlink Post Terms
  * Plugin URI:        https://github.com/philhoyt/unlink-post-terms
  * Description:       Adds a toggle to remove links from the post terms block while maintaining all styling options.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.6
  * Requires PHP:      7.2
  * Author:            Phil Hoyt
@@ -17,19 +17,37 @@
 
 namespace Unlink\UnlinkPostTerms;
 
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 // Plugin version.
-define( __NAMESPACE__ . '\VERSION', '1.0.0' );
+define( __NAMESPACE__ . '\VERSION', '1.1.0' );
 
 // Plugin directory path.
 define( __NAMESPACE__ . '\PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 // Plugin directory URL.
 define( __NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+// Updates are delivered from GitHub releases via Plugin Update Checker.
+require_once PLUGIN_DIR . 'lib/plugin-update-checker/plugin-update-checker.php';
+
+$unlink_post_terms_update_checker     = PucFactory::buildUpdateChecker(
+	'https://github.com/philhoyt/unlink-post-terms/',
+	__FILE__,
+	'unlink-post-terms'
+);
+$unlink_post_terms_update_checker_api = $unlink_post_terms_update_checker->getVcsApi();
+if ( method_exists( $unlink_post_terms_update_checker_api, 'enableReleaseAssets' ) ) {
+	// Only a .zip asset counts, and a release without one is skipped. The
+	// default PREFER_RELEASE_ASSETS falls back to GitHub's source archive,
+	// which installs as <Repo>-<tag>/ and breaks the plugin directory.
+	$unlink_post_terms_update_checker_api->enableReleaseAssets( '/\.zip$/', $unlink_post_terms_update_checker_api::REQUIRE_RELEASE_ASSETS );
+}
 
 /**
  * Initialize the plugin.
